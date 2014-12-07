@@ -17,7 +17,7 @@ it is really hard trying to migrate to it. Why did they have to make it soo
 difficult?!
 
 ---- 
-There are two NoteList screens. One is for the normal theme [NoteListLight.java](src/bander/notepad/NoteListLight.java) and one is for the AppCompat theme [NoteListAppCompat.java](src/bander/notepad/NoteListAppCompat.java). It just uses different icons. That is 100% planned.
+There are two NoteList screens. One is for the normal theme [NoteListLight.java](src/bander/notepad/NoteListLight.java) and one is for the AppCompat theme [NoteListAppCompat.java](src/bander/notepad/NoteListAppCompat.java). This is because all AppCompat activities must use ActionBarActiviy and ActionBarActivity will crash if not using AppCompat. This is also the same way, with two clones of the activity, and also two layouts, one with the Toolbar and one without.
 
 The Startup activity is the core of this app. It is an app that sets the theme for each Activity, launches the right NoteList, and launches the password screen
 
