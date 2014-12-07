@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="perms_dangerous_grp_color">#dd6826</color>
+	<color name="selector_kk_white">#66ffffff</color>
+	<color name="selector_kk_light">#1A000000</color>
+</resources>

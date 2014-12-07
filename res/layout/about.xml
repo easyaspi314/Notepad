@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+	android:paddingLeft="8dp"
+	android:paddingRight="8dp"
+	android:paddingTop="4dp">
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/about1"
+		android:textStyle="bold"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:padding="4dp"/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/about2"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:padding="4dp"/>
+	<!-- Pseudo dialog buttons :P -->
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerHorizontal"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2"
+		style="?android:attr/buttonBarStyle"
+		android:id="@+id/buttonbar">
+		<Button
+			android:id="@+id/osb"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="@string/licences"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_weight="1"/>
+		<Button
+			android:id="@+id/back2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:text="@string/dialog_back"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_weight="1"/>
+
+	</LinearLayout>
+</LinearLayout>

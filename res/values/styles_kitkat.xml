@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- KitKat Dark parent theme -->
+    <style name="Theme.KitKat.Dark" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarStyle">@style/KitKat.ActionBar.Dark</item>
+        <item name="android:listViewStyle">@style/MyListViewStyle</item>
+        <item name="android:actionBarItemBackground">@drawable/activated_background</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+        <item name="android:buttonStyle">@style/DarkButton</item>
+        <!-- Not failed anymore! Thanks AOSP! -->
+        <item name="android:checkboxStyle">@style/CheckDark</item>
+    </style>
+    <!-- Dark Checkbox ... -->
+    <style name="CheckDark" parent="@android:style/Widget.Holo.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check_dark</item>
+    </style>
+    <!-- KitKat-dark themed Button -->
+    <style name="DarkButton" parent="@android:style/Widget.Holo.Button">
+        <item name="android:background">@drawable/button_dark</item>
+    </style>
+    <!-- Action Bar Dark -->
+    <style name="KitKat.ActionBar.Dark" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:titleTextStyle">@style/KitKat.Dark.ActionBarText</item>
+    </style>
+    <!-- For some weird reason the text color is black without this. Whatever. -->
+    <style name="KitKat.Dark.ActionBarText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title" />
+    <!-- KitKat Holo Light theme -->
+    <style name="Theme.KitKat.Light" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarItemBackground">@drawable/activated_background_light</item>
+        <item name="android:listViewStyle">@style/MyListViewStyleLight</item>
+        <item name="android:buttonStyle">@style/LightButton</item>
+        <item name="android:checkboxStyle">@style/checkLight</item>
+    </style>
+    <!-- KitKat Light with Dark Action Bar -->
+    <style name="Theme.KitKat.Light.DarkActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarItemBackground">@drawable/activated_background</item>
+        <item name="android:listViewStyle">@style/MyListViewStyleLight</item>
+        <item name="android:buttonStyle">@style/LightButton</item>
+        <item name="android:checkboxStyle">@style/checkLight</item>
+    </style>
+    <!-- button -->
+    <style name="LightButton" parent="@android:style/Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/button_light</item>
+    </style>
+    <!-- ListView -->
+    <style name="MyListViewStyleLight" parent="@android:style/Widget.Holo.Light.ListView">
+        <item name="android:listSelector">@drawable/activated_background_light</item>
+    </style>
+    <!-- Light checkbox -->
+    <style name="checkLight" parent="@android:style/Widget.Holo.Light.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check_light</item>
+    </style>
+
+</resources>

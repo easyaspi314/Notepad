@@ -1,0 +1,122 @@
+=Notepad=
+
+***This project depends on the Android Support v4 Library and LicensesDialog (http://psdev.de)!***
+They are not included but you should be able to add them.
+
+I would really like some help with this, I have some issues with it like the license dialog which I just added. 
+Could someone show me how to launch it from a PreferenceScreen? 
+I also need to get rid of all the stupid deprecations. Stupid Lint! Get stuck in my dryer! :
+I literally had to change all the cursor.close(); to cursor=null; because it
+crashes the app when you return to it in the recents.
+
+I would also like to use Fragments (yuck) to prepare for a 2-column view, but 
+it is really hard trying to migrate to it. Why did they have to make it soo 
+difficult?!
+
+
+---- 
+There are two NoteList screens. One is for the light theme and one is for the dark theme. It just uses different icons. That is 100% planned.
+
+The Startup activity loads the preference for the theme and launches the right NoteList for that theme. It also mostly eliminates theme switching!
+
+It also instantly loads the theme without restarting the app. When the NoteList launches Preferences, it declares finish(); and when the Back key
+is pressed in the preferences, Startup is launched and that launches the right activity.
+
+My KitKat theme is in styles.xml. The light theme starts on Holo Light and adds selector and button colors. The Dark theme is a bit more complex, 
+using the same elements as above, but the Action Bar is borrowed from Theme.Holo.Light.DarkActionBar and the background is regular Holo.
+
+================ Notice ===================
+I give all of my credit to BanderLabs for making the Notepad tutorial app 1000 times better! It is 80% of the same code.
+
+The major things I did: 
+	- Switch between KitKat Holo, ICS/JB Holo, "DeviceDefault" to satisfy TouchWiz fans, and classic Gingerbread (but why? This is Holo themed...). Choose a light or dark version.
+	- LicensesDialog
+	- Option for Monospace font
+	- Option to toggle AutoCorrect
+	- Converted small activities to Dialogs. NOTE: I need to have actual dialog buttons, not actual buttons.
+	- Organized PreferenceScreen
+	- Action Bar
+	- Renamed weird strings.
+	- New icon (not mine, unzipped from closed Ice Cream Sandwich theme (can't remember the link) Over the summer I will design one.
+	- Organized/optimized some activities, like reordering the buttons, to comply with ICS.
+	- PreferenceFragment!!!!
+	
+================= To do ===============
+
+	- Rename package to com.devin.notepad so it would not cause conflicts
+	- Better Action Bar usage.
+	- HDPI, XHDPI and XXHDPI
+	- Tablet-friendly. "Honeypad" demo seems good, but hard to implement, because of Fragments.
+	- Remove deprecated stuff, esp. Cursor and other stuff.
+	- Fragments, but from the look of it, it will require a whole rewrite.
+	- Better About dialog.
+	- Dialog messages should have positive/negative buttons, not using layout buttons.
+	- Remove buttons on NoteEdit. It ahouldn't be that hard to put it in the AB.
+	- When Back is pressed from the editor, ask for a confirm dialog instead of auto-save.
+	- GB support using ABC, ABS, or HoloEverywhere.
+	- Java or XML based ActionBar? 
+	- Check box theme is weird. 
+	- Easter egg? ;)
+
+======Requested in comments on BanderLabs' Wiki======
+
+	- Save path - Use FileMan?
+	- Smarter import/export. 
+	- dpl0...@gmail.com - Encryption of backups?... How? Password-protected ZIP?
+	- dpl0...@gmail.com - auto backup
+	- cagilber...@gmail.com - Timestamps
+	- polkadot...@gmail.com - Lock/hide
+	- b...@xpressionmedia.com - Import CSV
+	- Desktop sync.... with what? Wouldn't that make the
+	  app bloated?!
+	
+================= Licenses ================
+Copyright 2014 Devin Hussey
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the
+specific language governing permissions and limitations
+under the License.
+
+============== Original application ===============
+Notepad (http://code.google.com/p/banderlabs)
+
+Copyright 2011 BanderLabs
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the
+specific language governing permissions and limitations
+under the License.
+=========== Other licenses ============
+LicensesDialog (http://psdev.de)
+
+Copyright 2013 Phillip Schiffer
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the
+specific language governing permissions and limitations
+under the License.

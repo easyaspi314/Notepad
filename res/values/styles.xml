@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- ListView selector #66ffffff -->
+    <style name="MyListViewStyle" parent="@android:style/Widget.Holo.ListView">
+        <item name="android:listSelector">@drawable/activated_background</item>
+    </style>
+ 
+    <!--
+    Gingerbread theme, but with black background
+	for more accuracy and to be rid of the weird
+	ListView dividers.
+    -->
+    <style name="Theme" parent="@android:style/Theme">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <!-- Mixed theme. Gingerbread theme with the ActionBar. -->
+    <style name="Theme.WithActionBar" parent="@android:style/Theme.WithActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <style name="Dialog" parent="@android:style/Theme.DeviceDefault.Dialog" />
+
+</resources>

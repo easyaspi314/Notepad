@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Rename-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+ 	android:orientation="vertical"
+ 	android:layout_weight="0"
+>
+	<LinearLayout 
+		android:layout_width="match_parent" 
+		android:layout_height="0dip"
+		android:orientation="vertical"
+		android:layout_weight="1"
+		android:padding="8dp"
+
+	>
+		<EditText android:id="@+id/title" 
+			android:layout_width="match_parent" 
+			android:layout_height="wrap_content"
+			android:inputType="textCapSentences"
+		/>
+	</LinearLayout>	
+	<!-- Pseudo dialog buttons. :P -->
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="?android:attr/dividerHorizontal"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		style="?android:attr/buttonBarStyle"
+	>
+
+		<Button android:id="@+id/cancel" 
+			android:text="@android:string/cancel"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			style="?android:attr/buttonBarButtonStyle"
+		/>
+ 		<Button android:id="@+id/confirm" 
+			android:text="@android:string/ok"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			style="?android:attr/buttonBarButtonStyle"
+		/>			
+
+	</LinearLayout>
+</LinearLayout>
