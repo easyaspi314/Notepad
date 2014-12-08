@@ -19,9 +19,9 @@ difficult?!
 ---- 
 There are two NoteList screens. One is for the normal theme [NoteListLight.java](src/bander/notepad/NoteListLight.java) and one is for the AppCompat theme [NoteListAppCompat.java](src/bander/notepad/NoteListAppCompat.java). This is because all AppCompat activities must use ActionBarActiviy and ActionBarActivity will crash if not using AppCompat. This is also the same way, with two clones of the activity, and also two layouts, one with the Toolbar and one without.
 
-The Startup activity is the core of this app. It is an app that sets the theme for each Activity, launches the right NoteList, and launches the password screen
+The [Startup](src/bander/notepad/Startup.java) activity is the core of this app. It is an app that sets the theme for each Activity, launches the right NoteList, and launches the password screen
 
-My themes are in styles.xml, styles_appcompat.xml, and styles_kitkat.xml.. The light theme starts on Holo Light and adds selector and button colors. The Dark theme is a bit more complex, 
+My themes are in [styles.xml](res/values/styles.xml), [styles_appcompat.xml](res/values/styles_appcompat.xml), and [styles_kitkat.xml](res/values/styles_kitkat.xml). The light theme starts on Holo Light and adds selector and button colors. The Dark theme is a bit more complex, 
 using the same elements as above, but the Action Bar is borrowed from Theme.Holo.Light.DarkActionBar and the background is regular Holo.
 
 ####Notice
