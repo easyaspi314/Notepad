@@ -53,6 +53,5 @@ I give all of my credit to BanderLabs for making the Notepad tutorial app 1000 t
 - dpl0...@gmail.com - Encryption of backups?... How? Password-protected ZIP?
 - dpl0...@gmail.com - auto backup
 - cagilber...@gmail.com - Timestamps
-- ~polkadot...@gmail.com - Lock/hide Password!~
 - b...@xpressionmedia.com - Import CSV
 - Desktop sync.... with what? Wouldn't that make the app bloated?!
