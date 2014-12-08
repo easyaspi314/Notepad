@@ -1,8 +1,8 @@
-Notepad
-==
-<h3>Simple, easy-to-use, themed notepad forked from [an old project by BanderLabs](http://code.google.com/p/banderlabs).</h3>
+#Notepad
 
-<h4>How to build:</h4>
+###Simple, easy-to-use, themed notepad forked from [an old project by BanderLabs](https://code.google.com/p/banderlabs) .
+
+####How to build:
  1. Clone the following projects:
   * This.
   * [AppCompatFragmentListActivity](https://github.com/easyaspi314/AppCompatFragmentListActivity)
@@ -24,10 +24,10 @@ The Startup activity is the core of this app. It is an app that sets the theme f
 My themes are in styles.xml, styles_appcompat.xml, and styles_kitkat.xml.. The light theme starts on Holo Light and adds selector and button colors. The Dark theme is a bit more complex, 
 using the same elements as above, but the Action Bar is borrowed from Theme.Holo.Light.DarkActionBar and the background is regular Holo.
 
-<h4>Notice </h4>
+####Notice
 I give all of my credit to BanderLabs for making the Notepad tutorial app 1000 times better! It is 80% of the same code.
 
-<h4>The major things I did:</h4>
+####The major things I did:
 - Switch between Material (AppCompat), KitKat Holo, ICS/JB Holo, "DeviceDefault" to satisfy TouchWiz fans, and classic Gingerbread (but why? This is Holo themed...). Choose a light, light/darkactionbar, or dark version. Only has one theme for Material theme.
 - LicensesDialog
 - Option for Monospace font
@@ -41,13 +41,14 @@ I give all of my credit to BanderLabs for making the Notepad tutorial app 1000 t
 - PreferenceFragments!!!
 - Password protect. Very basic.
 
-<h4>To do </h4>
+####To do
 - HDPI, XHDPI and XXHDPI. I only included MDPI drawables because my phone's screen is MDPI.
 - Tablet-friendly. "Honeypad" demo seems good, but hard to implement, because of Fragments.
 - Fragments, but from the look of it, it will require a whole rewrite.
 - A ton of code updates. This is 2011 code, and it has a *LOT* of deprecated code. Especially some cursor management. I suck at that.
 - Some dialog messages should have positive/negative buttons, not using layout buttons.
-<h4>Requested in comments on BanderLabs' Wiki</h4>
+
+####Requested in comments on BanderLabs' Wiki
 - Smarter import/export. 
 - dpl0...@gmail.com - Encryption of backups?... How? Password-protected ZIP?
 - dpl0...@gmail.com - auto backup
