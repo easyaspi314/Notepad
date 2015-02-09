@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/SEARCH_ID"
+        android:icon="@drawable/abc_ic_search_api_mtrl_alpha"
+        android:title="@string/search_hint"
+        appcompat:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/INSERT_ID"
+        android:icon="@drawable/ic_add_black_48dp"
+        android:title="@string/menu_insert"
+        appcompat:showAsAction="always|withText"/>
+    <item
+        android:id="@+id/PREFS_ID"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/menu_prefs"
+        appcompat:showAsAction="never"/>
+
+</menu>

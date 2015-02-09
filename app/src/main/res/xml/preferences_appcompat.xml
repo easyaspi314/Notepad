@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings screen -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_general" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="listItemSize"
+            android:summaryOff="@string/pref_listItemSizeSummaryOff"
+            android:summaryOn="@string/pref_listItemSizeSummaryOn"
+            android:title="@string/pref_listItemSize" />
+
+        <de.mrapp.android.preference.ListPreference
+            android:defaultValue="1"
+            android:entries="@array/sortOrderEntries"
+            android:entryValues="@array/sortOrderValues"
+            android:key="sortOrder"
+            android:summary="@string/pref_sortOrderSummary"
+            android:title="@string/pref_sortOrder" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sortAscending"
+            android:summaryOff="@string/pref_sortAscendingSummaryOff"
+            android:summaryOn="@string/pref_sortAscendingSummaryOn"
+            android:title="@string/pref_sortAscending" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="deleteConfirmation"
+            android:summaryOff="@string/pref_deleteConfirmationSummaryOff"
+            android:summaryOn="@string/pref_deleteConfirmationSummaryOn"
+            android:title="@string/pref_deleteConfirmation" />
+
+        <de.mrapp.android.preference.ListPreference
+            android:defaultValue="0"
+            android:entries="@array/themeTypeEntries"
+            android:entryValues="@array/themeTypeValues"
+            android:key="themeType"
+            android:summary="@string/pref_themeTypeSummary"
+            android:title="@string/pref_themeType" />
+
+        <Preference
+            android:defaultValue="@color/primary_dark_material_dark"
+            android:key="actionBarColor"
+            android:title="@string/pref_action_bar_color"
+            android:summary="@string/pref_action_bar_color_summary"/>
+
+        <Preference
+            android:key="password"
+            android:summary="Ask for password on startup."
+            android:title="Ask for password" >
+            <intent
+                android:targetClass="bander.notepad.PasswordSet"
+                android:targetPackage="com.devin.notepad" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_editor" >
+        <de.mrapp.android.preference.ListPreference
+            android:defaultValue="16"
+            android:entries="@array/textSizeEntries"
+            android:entryValues="@array/textSizeValues"
+            android:key="textSize"
+            android:summary="@string/pref_textSizeSummary"
+            android:title="@string/pref_textSize" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="typeface"
+            android:summary="@string/pref_typefaceSummary"
+            android:title="@string/pref_typeface" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="inputType"
+            android:summary="@string/pref_inputTypeSummary"
+            android:title="@string/pref_inputType" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="rememberPosition"
+            android:summaryOff="@string/pref_rememberPositionSummaryOff"
+            android:summaryOn="@string/pref_rememberPositionSummaryOn"
+            android:title="@string/pref_rememberPosition" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_notes" >
+        <PreferenceScreen
+            android:summary="@string/pref_exportSummary"
+            android:title="@string/pref_export" >
+            <intent
+                android:action="bander.notepad.action.ACTION_EXPORT"
+                android:targetClass="bander.notepad.NoteExport"
+                android:targetPackage="com.devin.notepad" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:summary="@string/pref_importSummary"
+            android:title="@string/pref_import" >
+            <intent
+                android:action="bander.notepad.action.ACTION_IMPORT"
+                android:targetClass="bander.notepad.NoteImport"
+                android:targetPackage="com.devin.notepad" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about" >
+        <PreferenceScreen
+            android:key="about"
+            android:summary="@string/devin"
+            android:title="@string/about" >
+
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

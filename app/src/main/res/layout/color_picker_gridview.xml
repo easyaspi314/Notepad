@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Imagine these colors in the preview as pretty colorful dots. -->
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          tools:numColumns="auto_fit"
+          android:gravity="center_horizontal"
+          android:columnWidth="72dp"
+          android:paddingLeft="@dimen/dialog_content_padding_left"
+          android:paddingRight="@dimen/dialog_content_padding_right"
+          android:paddingStart="@dimen/dialog_content_padding_left"
+          android:paddingEnd="@dimen/dialog_content_padding_right"
+          android:paddingTop="@dimen/dialog_content_padding_top"
+          android:paddingBottom="@dimen/dialog_content_padding_bottom"
+          android:id="@+id/grid"
+          tools:listitem="@layout/color_picker">
+
+</GridView>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        From the Google Material Color Guidelines palette
+        (http://www.google.com/design/spec/style/color.html#color-color-palette)
+    -->
+
+    <!-- The lighter colors for the Toolbar. -->
+    <array name="color500">
+        <!-- Red -->
+        <item>#F44336</item>
+
+        <!-- Pink -->
+        <item>#E91E63</item>
+
+        <!-- Purple -->
+        <item>#9C27B0</item>
+
+        <!-- Deep Purple -->
+        <item>#673AB7</item>
+
+        <!-- Indigo -->
+        <item>#3F51B5</item>
+
+        <!-- Blue -->
+        <item>#2196F3</item>
+
+        <!-- Light Blue -->
+        <item>#03A9F4</item>
+
+        <!-- Cyan -->
+        <item>#00BCD4</item>
+
+        <!-- Teal -->
+        <item>#009688</item>
+
+        <!-- Green -->
+        <item>#4CAF50</item>
+
+        <!-- Light Green -->
+        <item>#8BC34A</item>
+
+        <!-- Lime -->
+        <item>#CDDC39</item>
+
+        <!-- Yellow -->
+        <item>#FFEB3B</item>
+
+        <!-- Amber -->
+        <item>#FFC107</item>
+
+        <!-- Orange -->
+        <item>#FF9800</item>
+
+        <!-- Deep Orange -->
+        <item>#FF5722</item>
+
+        <!-- Brown -->
+        <item>#795548</item>
+
+        <!-- Grey -->
+        <item>#9E9E9E</item>
+
+        <!-- Blue Grey -->
+        <item>#607D8B</item>
+    </array>
+
+    <!-- The darker colors for the status bar. -->
+    <array name="color700">
+        <item>#D32F2F</item>
+
+        <item>#C2185B</item>
+
+        <item>#7B1FA2</item>
+
+        <item>#512DA8</item>
+
+        <item>#303F9F</item>
+
+        <item>#1976D2</item>
+
+        <item>#0288D1</item>
+
+        <item>#0097A7</item>
+
+        <item>#00796B</item>
+
+        <item>#388E3C</item>
+
+        <item>#689F38</item>
+
+        <item>#AFB42B</item>
+
+        <item>#FBC02D</item>
+
+        <item>#FFA000</item>
+
+        <item>#F57C00</item>
+
+        <item>#E64A19</item>
+
+        <item>#5D4037</item>
+
+        <item>#616161</item>
+
+        <item>#455A64</item>
+    </array>
+</resources>

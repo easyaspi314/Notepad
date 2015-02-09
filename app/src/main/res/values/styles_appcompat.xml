@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.Material" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:listViewStyle">@style/MyListViewStyleAppCompat</item>
+        <item name="actionBarItemBackground">@drawable/abc_item_background_holo_light</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/abc_item_background_holo_light</item>
+    </style>
+
+    <style name="MyListViewStyleAppCompat" parent="android:Widget.Holo.Light.ListView">
+        <item name="android:listSelector">@drawable/abc_item_background_holo_light</item>
+    </style>
+
+    <style name="Theme.Toolbar" parent="Theme.AppCompat.Light"/>
+
+    <style name="PopupMenu" parent="TextAppearance.AppCompat.Widget.ActionBar.Menu"/>
+
+</resources>

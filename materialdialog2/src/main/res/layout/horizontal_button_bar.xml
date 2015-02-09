@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+AndroidMaterialDialog Copyright 2014 Michael Rapp
+
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU Lesser General Public License as published 
+by the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but 
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public 
+License along with this program. If not, see
+<http://www.gnu.org/licenses/>. 
+-->
+<LinearLayout
+    android:id="@+id/button_bar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:orientation="horizontal">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:background="@android:color/transparent"
+            android:id="@android:id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dialog_button_padding"
+            android:minWidth="@dimen/dialog_button_min_width"
+            android:textColor="?attr/colorAccent"
+            android:textSize="@dimen/dialog_button_text_size"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dialog_button_spacing"
+        android:layout_marginStart="@dimen/dialog_button_spacing"
+        >
+
+        <Button
+            android:background="@android:color/transparent"
+            android:id="@android:id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dialog_button_padding"
+            android:minWidth="@dimen/dialog_button_min_width"
+            android:textColor="?attr/colorAccent"
+            android:textSize="@dimen/dialog_button_text_size"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dialog_button_spacing"
+        android:layout_marginStart="@dimen/dialog_button_spacing">
+
+        <Button
+            android:id="@android:id/button3"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dialog_button_padding"
+            android:minWidth="@dimen/dialog_button_min_width"
+            android:textColor="?attr/colorAccent"
+            android:textSize="@dimen/dialog_button_text_size"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</LinearLayout>
