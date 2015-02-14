@@ -19,8 +19,12 @@ package de.psdev.licensesdialog.licenses;
 import android.content.Context;
 import com.devin.notepad.R;
 
-
+/**
+ * For MaterialDialog and MaterialPreferences, licenced under the LGPLv3.
+ */
 public class GnuLesserGeneralPublicLicense30 extends License {
+
+    public GnuLesserGeneralPublicLicense30() {}
 
     @Override
     public String getName() {

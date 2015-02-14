@@ -17,99 +17,102 @@
 
 package bander.notepad;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.preference.PreferenceFragment;
 
 import com.devin.notepad.R;
 
 public class PrefsFragment extends PreferenceFragment implements
-		Preference.OnPreferenceChangeListener {
+        Preference.OnPreferenceChangeListener {
 
-	private static final String KEY_SORTORDER = "sortOrder";
-	private static final String KEY_SORTASCENDING = "sortAscending";
-	private static final String KEY_TEXTSIZE = "textSize";
-	private static final String KEY_ABOUT = "about";
+    private static final String KEY_SORTORDER = "sortOrder";
+    private static final String KEY_SORTASCENDING = "sortAscending";
+    private static final String KEY_TEXTSIZE = "textSize";
+    private static final String KEY_ABOUT = "about";
     private static final String KEY_THEME_TYPE = "themeType";
     private static final String KEY_COLOR = "colorScheme";
 
 
     @Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-		addPreferencesFromResource(R.xml.preferences);
+        addPreferencesFromResource(R.xml.preferences);
 
-		ListPreference sortOrderPreference = (ListPreference) findPreference(KEY_SORTORDER);
-		sortOrderPreference.setOnPreferenceChangeListener(this);
-		setSortOrderSummary(sortOrderPreference);
-		setSortAscendingEnabled(!sortOrderPreference.getValue().equals("0"));
+        ListPreference sortOrderPreference = (ListPreference) findPreference(KEY_SORTORDER);
+        sortOrderPreference.setOnPreferenceChangeListener(this);
+        setSortOrderSummary(sortOrderPreference);
+        setSortAscendingEnabled(!sortOrderPreference.getValue().equals("0"));
 
-		ListPreference textSizePreference = (ListPreference) findPreference(KEY_TEXTSIZE);
-		textSizePreference.setOnPreferenceChangeListener(this);
-		setTextSizeSummary(textSizePreference);
+        ListPreference textSizePreference = (ListPreference) findPreference(KEY_TEXTSIZE);
+        textSizePreference.setOnPreferenceChangeListener(this);
+        setTextSizeSummary(textSizePreference);
 
-		Preference aboutPreference = findPreference(KEY_ABOUT);
-		aboutPreference
-				.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        ListPreference themePreference = (ListPreference) findPreference(KEY_THEME_TYPE);
+        themePreference.setOnPreferenceChangeListener(this);
 
-					@Override
-					public boolean onPreferenceClick(Preference preference) {
+        ListPreference colorSchemePreference = (ListPreference) findPreference(KEY_COLOR);
+        colorSchemePreference.setOnPreferenceChangeListener(this);
+
+        Preference aboutPreference = findPreference(KEY_ABOUT);
+        aboutPreference
+                .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+                    @Override
+                    public boolean onPreferenceClick(Preference preference) {
                         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
                         About.newInstance().show(ft, "dialog");
-						return false;
-					}
-				});
+                        return false;
+                    }
+                });
 
     }
 
 
-
     @Override
-	public boolean onPreferenceChange(Preference preference, Object newValue) {
-		// TODO: Implement this method
-		final String key = preference.getKey();
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        // TODO: Implement this method
+        final String key = preference.getKey();
 
-        if (KEY_COLOR.equals(key)|| KEY_THEME_TYPE.equals(key)) {
+        if (KEY_COLOR.equals(key) || KEY_THEME_TYPE.equals(key)) {
             getActivity().recreate();
+            return true;
         }
 
-		if (KEY_SORTORDER.equals(key)) {
-			ListPreference sortOrderPreference = (ListPreference) preference;
-			sortOrderPreference.setValue((String) newValue);
-			setSortOrderSummary(sortOrderPreference);
-			setSortAscendingEnabled(!newValue.equals("0"));
-			return false;
-		}
-		if (KEY_TEXTSIZE.equals(key)) {
-			ListPreference textSizePreference = (ListPreference) preference;
-			textSizePreference.setValue((String) newValue);
-			setTextSizeSummary(textSizePreference);
-			return false;
-		}
-		return true;
-	}
+        if (KEY_SORTORDER.equals(key)) {
+            ListPreference sortOrderPreference = (ListPreference) preference;
+            sortOrderPreference.setValue((String) newValue);
+            setSortOrderSummary(sortOrderPreference);
+            setSortAscendingEnabled(!newValue.equals("0"));
+            return false;
+        }
+        if (KEY_TEXTSIZE.equals(key)) {
+            ListPreference textSizePreference = (ListPreference) preference;
+            textSizePreference.setValue((String) newValue);
+            setTextSizeSummary(textSizePreference);
+            return false;
+        }
+        return true;
+    }
 
-	private void setSortOrderSummary(ListPreference preference) {
-		preference.setSummary(getString(R.string.pref_sortOrderSummary,
-				preference.getEntry()));
-	}
+    private void setSortOrderSummary(ListPreference preference) {
+        preference.setSummary(getString(R.string.pref_sortOrderSummary,
+                preference.getEntry()));
+    }
 
-	private void setTextSizeSummary(ListPreference preference) {
-		preference.setSummary(getString(R.string.pref_textSizeSummary,
-				preference.getEntry()));
-	}
+    private void setTextSizeSummary(ListPreference preference) {
+        preference.setSummary(getString(R.string.pref_textSizeSummary,
+                preference.getEntry()));
+    }
 
-	private void setSortAscendingEnabled(boolean enabled) {
-		CheckBoxPreference sortAscendingPreference = (CheckBoxPreference) findPreference(KEY_SORTASCENDING);
-		sortAscendingPreference.setEnabled(enabled);
-		if (!enabled)
-			sortAscendingPreference.setChecked(true);
-	}
+    private void setSortAscendingEnabled(boolean enabled) {
+        CheckBoxPreference sortAscendingPreference = (CheckBoxPreference) findPreference(KEY_SORTASCENDING);
+        sortAscendingPreference.setEnabled(enabled);
+        if (!enabled)
+            sortAscendingPreference.setChecked(true);
+    }
 }

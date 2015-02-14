@@ -55,7 +55,7 @@ public class PasswordFragment extends Fragment {
         isSetup = getArguments().getBoolean("isSetup");
         View v = inflater.inflate(R.layout.password, container, false);
         passField = (EditText) v.findViewById(R.id.password);
-        final Button login  = (Button) v.findViewById(R.id.passwordSave);
+        final Button login = (Button) v.findViewById(R.id.passwordSave);
         Button disable = (Button) v.findViewById(R.id.disablePassword);
         if (!isSetup) {
             login.setText(android.R.string.ok);
@@ -65,7 +65,7 @@ public class PasswordFragment extends Fragment {
             disable.setVisibility(View.GONE);
         }
 
-        login.setOnClickListener(new Button.OnClickListener(){
+        login.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -75,25 +75,25 @@ public class PasswordFragment extends Fragment {
                 // Password field is empty, can't have that, can we?
                 if (TextUtils.isEmpty(pin)) {
                     passField.setError("This field can't be empty.");
-                // First pin set. Time to verify
-                } else if (firstPin == null && isSetup){
+                    // First pin set. Time to verify
+                } else if (firstPin == null && isSetup) {
                     firstPin = pin;
                     reset(true);
                     login.setText("Save");
-                // This is for the password protection login
+                    // This is for the password protection login
                 } else if (pin.equals(theRightThing) && !isSetup) {
                     getActivity().finish();
-                // Saved.
+                    // Saved.
                 } else if (pin.equals(firstPin) && isSetup) {
                     SharedPreferences.Editor editor = PreferenceManager
                             .getDefaultSharedPreferences(getActivity())
                             .edit();
 
-                            editor.putBoolean("passEnabled", true);
-                            editor.putString("password", pin);
-                            editor.apply();
+                    editor.putBoolean("passEnabled", true);
+                    editor.putString("password", pin);
+                    editor.apply();
                     getActivity().finish();
-                // Password is wrong.
+                    // Password is wrong.
                 } else {
                     reset(false);
                 }

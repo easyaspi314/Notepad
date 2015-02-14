@@ -29,7 +29,7 @@ public class ColorChooserDialog extends DialogFragment implements GridView.OnIte
 
     /**
      * Put the color position to the prefs.
-     *
+     * <p/>
      * {@inheritDoc}
      */
     @Override
@@ -40,6 +40,7 @@ public class ColorChooserDialog extends DialogFragment implements GridView.OnIte
         mEditor.putInt("actionBarColor", position);
         mEditor.apply();
         dismiss();
+        getActivity().recreate();
     }
 
 
@@ -53,7 +54,8 @@ public class ColorChooserDialog extends DialogFragment implements GridView.OnIte
     public ColorChooserDialog() {
     }
 
-    @Override @NonNull
+    @Override
+    @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         /**
          * Get the current position to try and select the current color. Only scrolls to that area

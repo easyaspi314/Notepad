@@ -79,8 +79,8 @@ public class ColorGridViewAdapter extends BaseAdapter {
         int red = Color.red(m500Colors[position]);
         int green = Color.green(m500Colors[position]);
         int blue = Color.blue(m500Colors[position]);
-        int rgb = Color.rgb (red, green, blue);
-        Drawable mDrawableToColor  = holder.mDrawable;
+        int rgb = Color.rgb(red, green, blue);
+        Drawable mDrawableToColor = holder.mDrawable;
         /**
          * Tint the icons.
          */

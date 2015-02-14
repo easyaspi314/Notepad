@@ -25,44 +25,45 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.devin.notepad.R;
 
 public class Password extends Activity {
 
-	TextView password;
-	EditText passwordField;
-	TextView wrong;
-	String passwordString;
+    TextView password;
+    EditText passwordField;
+    TextView wrong;
+    String passwordString;
 
-	@Override
-	public void onCreate(Bundle icicle) {
-		super.onCreate(icicle);
-		setContentView(R.layout.password);
-		password = (TextView) findViewById(R.id.enterpassword);
-		passwordField = (EditText) findViewById(R.id.password);
-		SharedPreferences preferences = PreferenceManager
-				.getDefaultSharedPreferences(this);
-		passwordString = preferences.getString("password", "");
-	}
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setContentView(R.layout.password);
+        password = (TextView) findViewById(R.id.enterpassword);
+        passwordField = (EditText) findViewById(R.id.password);
+        SharedPreferences preferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        passwordString = preferences.getString("password", "");
+    }
 
-	@Override
-	public void onBackPressed() {
-		// Can't back out of this one!
-	}
+    @Override
+    public void onBackPressed() {
+        // Can't back out of this one!
+    }
 
-	public void login(View view) {
-		SharedPreferences preferences = PreferenceManager
-				.getDefaultSharedPreferences(this);
-		passwordField = (EditText) findViewById(R.id.password);
-		passwordString = preferences.getString("password", "");
-		if (passwordField.getText().toString().equals(passwordString)) {
-			Intent i = new Intent(Password.this, Notepad.class);
-			i.putExtra("noPassword", true);
-			startActivity(i);
-			finish();
-		} else {
-			passwordField.setError("Try again.");
-			passwordField.setText("");
-		}
-	}
+    public void login(View view) {
+        SharedPreferences preferences = PreferenceManager
+                .getDefaultSharedPreferences(this);
+        passwordField = (EditText) findViewById(R.id.password);
+        passwordString = preferences.getString("password", "");
+        if (passwordField.getText().toString().equals(passwordString)) {
+            Intent i = new Intent(Password.this, Notepad.class);
+            i.putExtra("noPassword", true);
+            startActivity(i);
+            finish();
+        } else {
+            passwordField.setError("Try again.");
+            passwordField.setText("");
+        }
+    }
 }

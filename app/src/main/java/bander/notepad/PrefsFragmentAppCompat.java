@@ -33,7 +33,7 @@ import com.devin.notepad.R;
 
 import de.mrapp.android.preference.ListPreference;
 
-public class AppCompatPrefsFragment extends PreferenceFragment implements
+public class PrefsFragmentAppCompat extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_SORTORDER = "sortOrder";
@@ -41,7 +41,6 @@ public class AppCompatPrefsFragment extends PreferenceFragment implements
     private static final String KEY_TEXTSIZE = "textSize";
     private static final String KEY_ABOUT = "about";
     private static final String KEY_THEME_TYPE = "themeType";
-    private static final String KEY_COLOR = "actionBarColor";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,8 +57,8 @@ public class AppCompatPrefsFragment extends PreferenceFragment implements
         textSizePreference.setOnPreferenceChangeListener(this);
         setTextSizeSummary(textSizePreference);
 
-        Preference actionBarPref = findPreference(KEY_COLOR);
-        actionBarPref.setOnPreferenceChangeListener(this);
+        ListPreference themePref = (ListPreference) findPreference(KEY_THEME_TYPE);
+        themePref.setOnPreferenceChangeListener(this);
 
         Preference aboutPreference = findPreference(KEY_ABOUT);
         aboutPreference
@@ -107,9 +106,9 @@ public class AppCompatPrefsFragment extends PreferenceFragment implements
         // TODO: Implement this method
         final String key = preference.getKey();
 
-        if (KEY_COLOR.equals(key)|| KEY_THEME_TYPE.equals(key)) {
-            ((PreferenceActivityAppCompat)getActivity()).updateToolbar(((PreferenceActivityAppCompat)getActivity()));
-            return false;
+        if (KEY_THEME_TYPE.equals(key)) {
+            getActivity().recreate();
+            return true;
         }
 
         if (KEY_SORTORDER.equals(key)) {

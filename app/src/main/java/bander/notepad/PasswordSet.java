@@ -21,20 +21,22 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 
-/** A test. This is to set up a password. It does not work yet. **/
+/**
+ * A test. This is to set up a password. It does not work yet. *
+ */
 public class PasswordSet extends FragmentActivity {
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		Notepad.setThemeFromPreferences(this);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Notepad.setThemeFromPreferences(this);
         if (getActionBar() != null)
             getActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSupportFragmentManager().beginTransaction()
-            .replace(android.R.id.content, PasswordFragment.newInstance(true))
-            .commit();
-	}
+                .replace(android.R.id.content, PasswordFragment.newInstance(true))
+                .commit();
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -20,57 +20,72 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
-import com.devin.notepad.R;
-import de.psdev.licensesdialog.LicensesDialogFragment;
+import android.view.KeyEvent;
+import android.widget.Toast;
 
-//import com.devin.notepad.R;
+import com.devin.notepad.R;
+
+import de.psdev.licensesdialog.LicenseResolver;
+import de.psdev.licensesdialog.LicensesDialogFragment;
+import de.psdev.licensesdialog.licenses.GnuLesserGeneralPublicLicense30;
 
 /**
- * Shows the LicencesDialog fragment. It is too hacky. This requires work.
- * Closing the LicenceDialog exits with a blank dialog that won't automatically
- * close. If I set the theme to NoDisplay, it breaks the app. Is there a way to
- * launch this from preferences.xml? I can't get an onClick working in
- * preferences.java. Do you like my awesome justification that I did? ;)
+ * DialogFragment to show info about the app.
  */
-
-/* It is now an About screen. It's all good... */
 
 public class About extends DialogFragment {
 
     public static About newInstance() {
         return new About();
     }
-	@Override
-	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		return new AlertDialog.Builder(getActivity())
-	
-				.setIcon(android.R.drawable.ic_dialog_info)
-				
-				.setTitle(R.string.about1)
-			
-				.setMessage(R.string.about2)
 
-				
-				.setPositiveButton(R.string.licences,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
-								Log.i("WHAT?!?!", "You are even looking at the licenses!? Who are you, anyway?!");
-								final LicensesDialogFragment fragment = LicensesDialogFragment
-										.newInstance(R.raw.notices, false);
-								fragment.show(getActivity().getSupportFragmentManager(), null);
-							}
-						})
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        return new AlertDialog.Builder(getActivity())
 
-				
-				.setNegativeButton(android.R.string.cancel,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog,
-									int which) {
-								dialog.cancel();
-							}
-						}).create();
-	}
+                .setIcon(android.R.drawable.ic_dialog_info)
+
+                .setTitle(R.string.about1)
+
+                .setMessage(R.string.about2)
+
+                .setOnKeyListener(new DialogInterface.OnKeyListener() {
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        if (event.getAction() == 1) {
+                            if (keyCode == 24) {
+                                Toast.makeText(getActivity(), "\u0057\u006f\u0077\u002c \u0079\u006f" +
+                                        "\u0075\u0027\u0072\u0065 \u0067\u006f\u006f\u0064\u0021",
+                                        Toast.LENGTH_LONG).show();
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+                })
+
+                .setPositiveButton(R.string.licences,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                // LGPLv3 is not included in the library, so we have to register it.
+                                LicenseResolver.registerLicense(new GnuLesserGeneralPublicLicense30());
+                                final LicensesDialogFragment fragment = LicensesDialogFragment
+                                        .newInstance(R.raw.notices, false);
+                                fragment.show(getActivity().getSupportFragmentManager(), null);
+                            }
+                        })
+
+
+                .setNegativeButton(android.R.string.cancel,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                dialog.cancel();
+                            }
+                        }).create();
+    }
 }

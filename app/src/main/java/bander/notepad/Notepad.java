@@ -46,6 +46,7 @@ public class Notepad extends FragmentActivity {
 
     /**
      * Called when the activity is first created.
+     *
      * @param savedInstanceState
      */
     @Override
@@ -81,6 +82,7 @@ public class Notepad extends FragmentActivity {
 
     /**
      * Sets the normal theme.
+     *
      * @param context
      */
     public static void setThemeFromPreferences(Context context) {
@@ -173,6 +175,7 @@ public class Notepad extends FragmentActivity {
 
     /**
      * Sets the theme for the dialogs.
+     *
      * @param context
      */
     public static void setDialogThemeFromPreferences(Context context) {
@@ -220,8 +223,9 @@ public class Notepad extends FragmentActivity {
     /**
      * Sets the theme for AppCompat. There is really no dark theme at the moment, it is mainly for
      * the Toolbar Color Chooser.
-     * @param activity
-     * @param classType
+     *
+     * @param activity ActionBarActivity acting as a Context
+     * @param classType Launch a new activity.
      */
     public static void setAppCompatThemeFromPreferences(ActionBarActivity activity,
                                                         String classType) {
@@ -248,25 +252,32 @@ public class Notepad extends FragmentActivity {
             switch (classType) {
                 case "Prefs": {
                     Intent intent = new Intent();
-                    intent.setClass(activity, SetPreferenceActivity.class);
+                    intent.setClass(activity, PrefsActivity.class);
                     activity.startActivity(intent);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    new PrefsActivityAppCompat().finish();
                     break;
                 }
                 case "Edit": {
                     Intent intent = new Intent();
                     intent.setClass(activity, NoteEdit.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     activity.startActivity(intent);
+                    new NoteEditAppCompat().finish();
                     break;
                 }
                 case "NoteList": {
                     Intent intent = new Intent();
                     intent.setClass(activity, NoteList.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     activity.startActivity(intent);
+                    new NoteListAppCompat().finish();
                     break;
                 }
                 default: {
                     Intent intent = new Intent();
                     intent.setClass(activity, Notepad.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     activity.startActivity(intent);
                     break;
                 }
@@ -276,7 +287,8 @@ public class Notepad extends FragmentActivity {
 
     /**
      * Sets the color of the {@link android.support.v7.widget.Toolbar}
-     * @param activity
+     *
+     * @param activity Used similarly to {@link android.content.Context}
      */
     public static void setToolbarColor(final ActionBarActivity activity) {
         SharedPreferences mSettings = PreferenceManager

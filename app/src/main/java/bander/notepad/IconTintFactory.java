@@ -28,9 +28,9 @@ import java.util.ArrayList;
 public class IconTintFactory {
 
     public static Drawable setDarkMaterialColor(int resId, Context context) {
-        int rgb = context.getResources().getColor(R.color.abc_primary_text_material_light);
+        int rgb = context.getResources().getColor(R.color.abc_secondary_text_material_light);
         Drawable mDrawableToColor = context.getResources().getDrawable(resId);
-        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_ATOP));
+        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_IN));
 
         return mDrawableToColor;
     }
@@ -39,10 +39,10 @@ public class IconTintFactory {
     setDarkMaterialColor(ArrayList<Drawable> mList, Context context) {
         ArrayList<Drawable> mTempList = new ArrayList<>();
         for (int i = 0; i < mList.size(); i++) {
-            int rgb = context.getResources().getColor(R.color.abc_primary_text_material_light);
+            int rgb = context.getResources().getColor(R.color.abc_secondary_text_material_light);
             Drawable mDrawableToColor = mList.get(i);
             if (mDrawableToColor != null)
-                mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_ATOP));
+                mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_IN));
             mTempList.add(i, mDrawableToColor);
         }
 
@@ -50,9 +50,9 @@ public class IconTintFactory {
     }
 
     public static Drawable setLightMaterialColor(int resId, Context context) {
-        int rgb = context.getResources().getColor(R.color.abc_primary_text_material_dark);
+        int rgb = context.getResources().getColor(R.color.abc_secondary_text_material_dark);
         Drawable mDrawableToColor = context.getResources().getDrawable(resId);
-        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_ATOP));
+        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_IN));
 
         return mDrawableToColor;
     }
@@ -61,10 +61,10 @@ public class IconTintFactory {
     setLightMaterialColor(ArrayList<Drawable> mList, Context context) {
         ArrayList<Drawable> mTempList = new ArrayList<>();
         for (int i = 0; i < mList.size(); i++) {
-            int rgb = context.getResources().getColor(R.color.abc_primary_text_material_dark);
+            int rgb = context.getResources().getColor(R.color.abc_secondary_text_material_dark);
             Drawable mDrawableToColor = mList.get(i);
             if (mDrawableToColor != null)
-                mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_ATOP));
+                mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_IN));
             mTempList.add(i, mDrawableToColor);
         }
 
@@ -74,7 +74,7 @@ public class IconTintFactory {
     public static Drawable setDarkHoloColor(int resId, Context context) {
         int rgb = context.getResources().getColor(R.color.color_action_icons_tint_holo);
         Drawable mDrawableToColor = context.getResources().getDrawable(resId);
-        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_ATOP));
+        mDrawableToColor.setColorFilter(new PorterDuffColorFilter(rgb, PorterDuff.Mode.SRC_IN));
 
         return mDrawableToColor;
     }
