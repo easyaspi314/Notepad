@@ -3,6 +3,7 @@
 ###Simple, easy-to-use, themeable notepad forked from [an old project by BanderLabs](https://code.google.com/p/banderlabs).
 
 Release APK coming soon.
+**This project isn't dead, I have it at low priority (I am working on other projects) and am trying to work on LP/MM support.**
 
 ####How to build:
  1. Import these projects into Android Studio.
